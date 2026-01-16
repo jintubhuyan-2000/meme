@@ -1,26 +1,141 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ask Her Out</title>
+  <title>For Sungku ❤️</title>
 
-  <link rel="stylesheet" href="./style.css" />
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 20px;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 2rem;
+      margin-top: 20px;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Start button */
+    .start-btn {
+      margin-top: 20px;
+      padding: 12px 28px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      background: white;
+      color: #ff4d6d;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.08);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 24px;
+      animation: floatUp 6s linear forwards;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-100vh) scale(1.6);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
+
+  <!-- YouTube song (hidden) -->
+  <iframe id="ytSong" width="0" height="0" allow="autoplay"></iframe>
+
   <div class="container">
+
+    <!-- Cute GIF -->
     <div class="tenor-gif-embed" data-postid="253027946666209433" data-share-method="host" data-aspect-ratio="1.37853"
       data-width="100%">
       <a
-        href="https://tenor.com/view/mochi-cat-mochi-and-goma-goma-and-peach-mochi-mochi-peach-cat-gif-gif-253027946666209433">Mochi
-        Cat GIF</a>from <a href="https://tenor.com/search/mochi-gifs">Mochi GIFs</a>
+        href="https://tenor.com/view/mochi-cat-mochi-and-goma-goma-and-peach-mochi-mochi-peach-cat-gif-gif-253027946666209433">
+        Mochi Cat GIF
+      </a>
     </div>
-    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-    <h1>I knew it! You Love me a lot 😘</h1>
+    <script async src="https://tenor.com/embed.js"></script>
+
+    <h1>I knew it! You love me a lot 😘💖</h1>
+
+    <button class="start-btn" onclick="startRomance(this)">
+      Tap to start ❤️
+    </button>
   </div>
+
+  <script>
+    let heartInterval;
+
+    function startRomance(btn) {
+      // Play YouTube song (WORKING)
+      document.getElementById("ytSong").src =
+        "https://www.youtube.com/embed/450p7goxZqg?autoplay=1&loop=1";
+
+      // Start hearts
+      heartInterval = setInterval(createHeart, 350);
+
+      // Hide button
+      btn.style.display = "none";
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+
+      const hearts = ["❤️", "💖", "💕", "💘", "💗"];
+      heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 6000);
+    }
+  </script>
+
 </body>
 
 </html>

@@ -4,28 +4,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proposed Her</title>
+  <title>For Sungku ❤️</title>
 
   <link rel="stylesheet" href="./style.css" />
+
+  <style>
+    .slider {
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 20px;
+      margin: 20px auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .slides {
+      display: flex;
+      animation: slide 12s infinite;
+    }
+
+    .slides img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-300px);
+      }
+
+      50% {
+        transform: translateX(-600px);
+      }
+
+      75% {
+        transform: translateX(-900px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body onclick="playSong()">
+
+  <!-- Audio -->
+  <audio id="loveSong">
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
   <div class="container">
-    <div class="tenor-gif-embed" data-postid="22885016" data-share-method="host" data-aspect-ratio="1.04918"
-      data-width="100%">
-      <a href="https://tenor.com/view/manja-gif-22885016">Manja Sticker</a>from
-      <a href="https://tenor.com/search/manja-stickers">Manja Stickers</a>
+
+    <!-- Sungku photo slider -->
+    <div class="slider">
+      <div class="slides">
+        <img
+          src="E:\Downloads\nvn.buildss-main\nvn.buildss-main\meme\117089085_131548538620837_681428502924612207_n77.jpg">
+        <img src="E:\Downloads\nvn.buildss-main\nvn.buildss-main\meme\IB_SUNGKU.jpeg">
+        <img src="E:\Downloads\nvn.buildss-main\nvn.buildss-main\meme\WhatsApp Image 2025-09-05 at 2.52.48 PM.jpeg">
+        <img src="E:\Downloads\nvn.buildss-main\nvn.buildss-main\meme\WhatsApp Image 2025-09-05 at 2.33.06 PM.jpeg">
+      </div>
     </div>
-    
-    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-    <h1>Do you love me? 🤗</h1>
-    <p>nvn is all yours</p>
+
+    <h1>Sungku ❤️</h1>
+    <h2>Do you love me? 🤗</h2>
+    <p>You are all mine 💖</p>
 
     <div class="btn">
       <a href="yes.html">Yes</a>
       <a href="no1.html">No</a>
     </div>
   </div>
+
+  <script>
+    function playSong() {
+      document.getElementById("loveSong").play();
+    }
+  </script>
+
 </body>
 
 </html>
